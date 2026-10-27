@@ -1,0 +1,32 @@
+# Local stand-in for the Colab/UCloud environment: the notebooks are self-contained and
+# install what they need with the pip cell at the top; locally `uv sync` provides the same packages.
+[project]
+name = "bcss-segmentation"
+version = "0.1.0"
+description = "Breast cancer tissue segmentation on BCSS: U-Net variants vs annotation granularity (DL course mini-project)"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "girder-client",
+    "ipykernel",
+    "keras>=3",
+    "keras-hub",
+    "matplotlib",
+    "nbconvert",
+    "numpy",
+    "pandas",
+    "pillow",
+    "scikit-image",
+    "torch==2.14.1",
+]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }

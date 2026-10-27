@@ -1,0 +1,12 @@
+# Python / environment
+__pycache__/
+.venv
+.ipynb_checkpoints/
+
+# data (downloaded or derived by the notebooks)
+bcss/
+bcss_split/
+bcss_repo/
+
+# model checkpoints
+*.keras
